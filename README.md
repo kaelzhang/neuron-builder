@@ -1,11 +1,11 @@
-[![Build Status](https://travis-ci.org/kaelzhang/neuron-module-builder.png?branch=master)](https://travis-ci.org/kaelzhang/neuron-module-builder)
+[![Build Status](https://travis-ci.org/kaelzhang/neuron-module-bundler.png?branch=master)](https://travis-ci.org/kaelzhang/neuron-module-bundler)
 
-# neuron-module-builder
+# neuron-module-bundler
 
 ## Usage
 
 ```js
-var builder = require('neuron-module-builder');
+var builder = require('neuron-module-bundler');
 
 builder(file, options, callback)
   .on('warn', function(message){

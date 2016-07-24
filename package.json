@@ -1,6 +1,6 @@
 {
-  "name": "neuron-module-builder",
-  "version": "7.0.1",
+  "name": "neuron-module-bundler",
+  "version": "8.0.0",
   "description": "Wrap commonjs module/1.0 javascript files for [neuron](http://github.com/kaelzhang/neuron)",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:kaelzhang/neuron-module-builder.git"
+    "url": "git@github.com:kaelzhang/neuron-module-bundler.git"
   },
   "keywords": [
-    "neuron-module-builder"
+    "neuron-module-bundler"
   ],
   "engines": {
     "node": ">=0.8.0"
@@ -19,7 +19,7 @@
   "author": "kael",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kaelzhang/neuron-module-builder/issues"
+    "url": "https://github.com/kaelzhang/neuron-module-bundler/issues"
   },
   "devDependencies": {
     "async": "^0.9.2",
