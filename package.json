@@ -4,24 +4,36 @@
   "description": "Wrap commonjs module/1.0 javascript files for [neuron](http://github.com/kaelzhang/neuron)",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/demo.js"
+    "test": "ava --verbose --timeout=10s"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:kaelzhang/neuron-module-bundler.git"
   },
   "keywords": [
-    "neuron-module-bundler"
+    "neuron-module-bundler",
+    "bundler",
+    "module",
+    "builder"
   ],
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=6.0.0"
   },
   "author": "kael",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kaelzhang/neuron-module-bundler/issues"
   },
+  "ava": {
+    "files": [
+      "test/traverse.js",
+      "test/unwrap.js"
+    ]
+  },
   "devDependencies": {
+    "ava": "^0.15.2",
+    "babel-core": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0"
   },
   "dependencies": {
     "babylon": "^6.8.4",
