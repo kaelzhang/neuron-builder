@@ -1,6 +1,6 @@
 'use strict'
 
-const fixture = require('./fixture')
+const fixture = require('./fixtures/nodes')
 
 const Cleaner = require('../lib/cleaner')
 const Generator = require('../lib/generate')

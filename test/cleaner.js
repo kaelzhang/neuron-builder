@@ -3,7 +3,7 @@
 const test = require('ava')
 const Cleaner = require('../lib/cleaner')
 const clone = require('clone')
-const get_clone = require('./fixture')
+const get_clone = require('./fixtures/nodes')
 
 test('should clean nodes', t => {
   let {
