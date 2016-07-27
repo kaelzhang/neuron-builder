@@ -3,21 +3,7 @@
 const test = require('ava')
 const Cleaner = require('../lib/cleaner')
 const clone = require('clone')
-const {
-  CWD,
-  PKG,
-  NODES
-} = require('./fixture')
-
-
-function get_clone () {
-  return {
-    cwd: CWD,
-    pkg: clone(PKG),
-    nodes: clone(NODES)
-  }
-}
-
+const get_clone = require('./fixture')
 
 test('should clean nodes', t => {
   let {

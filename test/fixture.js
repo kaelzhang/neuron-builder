@@ -1,3 +1,7 @@
+'use strict'
+
+const clone = require('clone')
+
 const NODES = {
   '/path/to/a.js': {
     id: '/path/to/a.js',
@@ -5,16 +9,19 @@ const NODES = {
       './b': '/path/to/b.json',
       'b': 'b'
     },
+    type: ['require'],
     js: true
   },
 
   '/path/to/b.json': {
     id: '/path/to/b.json',
+    type: ['require'],
     json: true
   },
 
   'b': {
     id: 'b',
+    type: ['require'],
     foreign: true
   }
 }
@@ -31,8 +38,10 @@ const PKG = {
 const CWD = '/path/to'
 
 
-module.exports = {
-  NODES,
-  PKG,
-  CWD
+module.exports = () => {
+  return {
+    cwd: CWD,
+    pkg: clone(PKG),
+    nodes: clone(NODES)
+  }
 }
