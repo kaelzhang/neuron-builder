@@ -2,22 +2,13 @@
 
 const test = require('ava')
 const Cleaner = require('../lib/cleaner')
-const clone = require('clone')
 const get_clone = require('./fixtures/nodes')
 
 test('should clean nodes', t => {
   let {
-    cwd,
-    pkg,
     nodes
-  } = get_clone()
+  } = get_clone.cleaned()
 
-  let cleaner = new Cleaner({
-    cwd,
-    pkg
-  })
-
-  nodes = cleaner.clean(nodes)
   let a = nodes['/path/to/a.js']
 
   t.is(a.id, 'a@1.0.0/a.js')

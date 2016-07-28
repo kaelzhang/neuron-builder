@@ -29,7 +29,8 @@
       "test/traverse.js",
       "test/unwrap.js",
       "test/cleaner.js",
-      "test/generate.js"
+      "test/generate.js",
+      "test/concat.js"
     ]
   },
   "devDependencies": {

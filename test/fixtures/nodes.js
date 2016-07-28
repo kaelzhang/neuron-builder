@@ -1,7 +1,10 @@
 'use strict'
 
+module.exports = create
+
 const clone = require('clone')
 const babylon = require('babylon')
+const Cleaner = require('../../lib/cleaner')
 
 const {
   SourceNode
@@ -44,8 +47,9 @@ const NODES = {
   '/path/to/b.json': {
     id: FILE_B,
     code: code_b_modularized.code,
+    origin: CODE_B,
     ast: babylon.parse(code_b_modularized.code),
-    map: code_b_modularized.map,
+    map: code_b_modularized.map.toJSON(),
     type: ['require'],
     json: true
   },
@@ -68,11 +72,30 @@ const PKG = {
 
 const CWD = '/path/to'
 
-
-module.exports = () => {
+function create () {
   return {
     cwd: CWD,
     pkg: clone(PKG),
     nodes: clone(NODES)
+  }
+}
+
+
+create.cleaned = () => {
+  let {
+    cwd,
+    pkg,
+    nodes
+  } = create()
+
+  let cleaner = new Cleaner({
+    cwd,
+    pkg
+  })
+
+  return {
+    cwd,
+    pkg,
+    nodes: cleaner.clean(nodes)
   }
 }
